@@ -25,7 +25,7 @@ Se trata de uma aplicação web desenvolvida ao longo do Bootcamp GoStack. A apl
 
 ### 💾 Como Executar a aplicação?
 
-- O primeiro passo é clonar o repositório nossa base;
-- Em seguida dentro do diretório da aplicação executar no terminal o comando `yarn`, para baixar as dependências da nossa aplicação;
+- O primeiro passo é clonar o repositório em sua base;
+- Em seguida dentro do diretório da aplicação executar no terminal o comando `yarn`, para baixar as dependências da aplicação;
 - Na sequência podemos executar nossa aplicação web com o comando `yarn start`;
 
