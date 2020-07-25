@@ -100,6 +100,10 @@ export const Issues = styled.section`
       margin-top: 16px;
     }
 
+    svg {
+      color: #a8a8b3;
+    }
+
     div {
       margin: 0 16px;
       flex: 1;
