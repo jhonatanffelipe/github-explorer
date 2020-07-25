@@ -1,54 +1,100 @@
-import React from 'react';
-import { FiChevronRight } from 'react-icons/fi';
+import React, { useState, useEffect, FormEvent } from "react";
+import { FiChevronRight } from "react-icons/fi";
 
-import logoImg from '../../assets/github-logo.svg';
+import { Link } from "react-router-dom";
+import api from "../../services/api";
+import logoImg from "../../assets/github-logo.svg";
 
-import { Title, Form, Repositories } from './styles';
+import { Title, Form, Repositories, Error } from "./styles";
 
-const Dashboard: React.FC = () => (
-  // eslint-disable-next-line react/jsx-filename-extension
-  <>
-    <img src={logoImg} alt="Github Explorer" />
-    <Title>Explore repositórios no Githib</Title>
-    <Form>
-      <input type="text" placeholder="Digite o nome do repositório" />
-      <button type="submit">Pesquisar</button>
-    </Form>
-    <Repositories>
-      <a href="teste">
-        <img
-          src="https://avatars3.githubusercontent.com/u/54486596?s=460&u=6febbe8652f13c12a71e47cb373016ac07b46357&v=4"
-          alt="Jhonatan Felipe"
+interface Repository {
+  full_name: string;
+  description: string;
+  owner: {
+    login: string;
+    avatar_url: string;
+  };
+}
+
+const Dashboard: React.FC = () => {
+  const [newRepo, setNewRepo] = useState("");
+  const [inputError, setInputError] = useState("");
+  const [repositories, setRepositories] = useState<Repository[]>(() => {
+    const storegedRepositories = localStorage.getItem(
+      "@GithubExplorer:repositories"
+    );
+
+    if (storegedRepositories) {
+      return JSON.parse(storegedRepositories);
+    }
+
+    return [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem(
+      "@GithubExplorer:repositories",
+      JSON.stringify(repositories)
+    );
+  }, [repositories]);
+  async function handleRepository(
+    event: FormEvent<HTMLFormElement>
+  ): Promise<void> {
+    event.preventDefault();
+
+    if (!newRepo) {
+      setInputError("Digite o autor/nome do repositório");
+      return;
+    }
+
+    try {
+      const response = await api.get<Repository>(`repos/${newRepo}`);
+
+      const repository = response.data;
+
+      setRepositories([...repositories, repository]);
+      setNewRepo("");
+      setInputError("");
+    } catch (err) {
+      setInputError("Erro na busca por esse repositório do repositório");
+    }
+  }
+
+  return (
+    <>
+      <img src={logoImg} alt="Github Explorer" />
+      <Title>Explore repositórios no Githib</Title>
+      <Form hasError={!!inputError} onSubmit={handleRepository}>
+        <input
+          type="text"
+          value={newRepo}
+          onChange={(e) => setNewRepo(e.target.value)}
+          placeholder="Digite o nome do repositório"
         />
-        <div>
-          <strong>jhonatanfflipe/arcnc</strong>
-          <p>Projeto desenvolvido ao longo da Semana OmniStack 09</p>
-        </div>
-        <FiChevronRight size={20} />
-      </a>
-      <a href="teste">
-        <img
-          src="https://avatars3.githubusercontent.com/u/54486596?s=460&u=6febbe8652f13c12a71e47cb373016ac07b46357&v=4"
-          alt="Jhonatan Felipe"
-        />
-        <div>
-          <strong>jhonatanfflipe/arcnc</strong>
-          <p>Projeto desenvolvido ao longo da Semana OmniStack 09</p>
-        </div>
-        <FiChevronRight size={20} />
-      </a>
-      <a href="teste">
-        <img
-          src="https://avatars3.githubusercontent.com/u/54486596?s=460&u=6febbe8652f13c12a71e47cb373016ac07b46357&v=4"
-          alt="Jhonatan Felipe"
-        />
-        <div>
-          <strong>jhonatanfflipe/arcnc</strong>
-          <p>Projeto desenvolvido ao longo da Semana OmniStack 09</p>
-        </div>
-        <FiChevronRight size={20} />
-      </a>
-    </Repositories>
-  </>
-);
+        <button type="submit">Pesquisar</button>
+      </Form>
+
+      {inputError && <Error>{inputError}</Error>}
+      <Repositories>
+        {repositories.map((repository) => (
+          <Link
+            key={repository.full_name}
+            to={`/repositories/${repository.full_name}`}
+          >
+            <img
+              src={repository.owner.avatar_url}
+              alt={repository.owner.login}
+            />
+            <div>
+              <strong>{repository.full_name}</strong>
+              <p>{repository.description}</p>
+            </div>
+            <FiChevronRight size={20} />
+          </Link>
+        ))}
+      </Repositories>
+    </>
+  );
+};
+
 export default Dashboard;
