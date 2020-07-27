@@ -13,23 +13,35 @@
 </p> 
 
 
-### 🖥 Informações sobre o projeto
+<p align="center">
+  <a href="#rocket-sobre-o-projeto">Sobre o Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#gear-tecnologias-utilizadas">Tecnologias utilizadas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#computer-executar-a-aplicação">Como executar a aplicação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+</p>
+
+
+### :rocket: Sobre o projeto
 
 Se trata de uma aplicação web desenvolvida ao longo do Bootcamp GoStack. A aplicação nos permite consultar os repositórios cadastrados no Github e visualizar suas Issues.
 
 <img height=350px src="https://raw.githubusercontent.com/jhonatanffelipe/github-explorer/master/assetsReadme/home.png"/>
 
-### 🛠 Tecnologias utilizadas 
-
+### :gear: Tecnologias utilizadas 
+-  [VS Code](https://code.visualstudio.com/)
+-  [Node.js](https://nodejs.org/)
+-  [Express](https://expressjs.com/)
+-  [Typescript](https://www.typescriptlang.org/)
+-  [ESLint](https://eslint.org/)
+-  [Prettier](https://prettier.io/)
+-  [EditorConfig](https://editorconfig.org/)
 -  [ReactJS](https://reactjs.org/)
 -  [React Router Dom](https://reactrouter.com/web/guides/quick-start)
 -  [Styled Components](https://styled-components.com/)
 -  [Axios](https://github.com/axios/axios)
 
 
-### 💾 Como Executar a aplicação?
+### :computer: Executar a aplicação
 
 - O primeiro passo é clonar o repositório em sua base;
 - Em seguida dentro do diretório da aplicação executar no terminal o comando `yarn`, para baixar as dependências da aplicação;
 - Na sequência podemos executar nossa aplicação web com o comando `yarn start`;
-
