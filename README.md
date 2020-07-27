@@ -16,7 +16,7 @@
 <p align="center">
   <a href="#rocket-sobre-o-projeto">Sobre o Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#gear-tecnologias-utilizadas">Tecnologias utilizadas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#computer-executar-a-aplicação">Como executar a aplicação</a>&nbsp;&nbsp;&nbsp;
+  <a href="#computer-executar-a-aplicação">Executar a aplicação</a>&nbsp;&nbsp;&nbsp;
 </p>
 
 
