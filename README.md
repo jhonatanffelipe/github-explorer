@@ -3,10 +3,14 @@
 </p>
 
 
-<h4 align="center">
-  Projeto web que permite consultas de repositórios cadastrados no GitHub e listar sua issues.
-</h4>
 
+<p align="center">
+   <img alt="Tecnologias" src="https://img.shields.io/github/languages/count/jhonatanffelipe/github-explorer?color=a8a8b3">
+   <img alt="Tamanho do repositório" src="https://img.shields.io/github/repo-size/jhonatanffelipe/github-explorer?color=a8a8b3">
+   <img alt="Ultimo commit no Github" src="https://img.shields.io/github/last-commit/jhonatanffelipe/github-explorer?color=a8a8b3">
+   <img alt="Criado por" src="https://img.shields.io/badge/made%20by-jhonatanffelipe-%20?color=a8a8b3">
+   <img alt="Linguagens mais usadas no programa" src="https://img.shields.io/github/languages/top/jhonatanffelipe/github-explorer?color=a8a8b3">
+</p> 
 
 
 ### 🖥 Informações sobre o projeto
