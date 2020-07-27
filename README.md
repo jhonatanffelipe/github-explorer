@@ -28,8 +28,6 @@ Se trata de uma aplicação web desenvolvida ao longo do Bootcamp GoStack. A apl
 
 ### :gear: Tecnologias utilizadas 
 -  [VS Code](https://code.visualstudio.com/)
--  [Node.js](https://nodejs.org/)
--  [Express](https://expressjs.com/)
 -  [Typescript](https://www.typescriptlang.org/)
 -  [ESLint](https://eslint.org/)
 -  [Prettier](https://prettier.io/)
