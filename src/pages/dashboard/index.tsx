@@ -5,7 +5,7 @@ import api from "../../services/api";
 
 import logoImg from "../../assets/logo.svg";
 
-import { Form, Repositories, Title } from "./styles";
+import { Error, Form, Repositories, Title } from "./styles";
 
 interface IRepository {
   full_name: string;
@@ -18,21 +18,31 @@ interface IRepository {
 
 const Dashboard: React.FC = () => {
   const [newRepo, setNewRepo] = useState("");
-
+  const [inputError, setInputError] = useState("");
   const [repositories, setRepositories] = useState<IRepository[]>([]);
 
   async function handleAddRepository(
-    event: FormEvent<HTMLFormElement>
+    event: FormEvent<HTMLFormElement>,
   ): Promise<void> {
     event.preventDefault();
 
-    const response = await api.get<IRepository>(`repos/${newRepo}`);
+    if (!newRepo) {
+      setInputError("Digite o nome do repositório");
+      return;
+    }
 
-    const repository = response.data;
+    try {
+      const response = await api.get<IRepository>(`repos/${newRepo}`);
 
-    setRepositories([...repositories, repository]);
+      const repository = response.data;
 
-    setNewRepo("");
+      setRepositories([...repositories, repository]);
+
+      setNewRepo("");
+      setInputError("");
+    } catch (error) {
+      setInputError("Erro ao realizar a busca pelo repositório informado");
+    }
   }
 
   return (
@@ -40,16 +50,19 @@ const Dashboard: React.FC = () => {
       <img src={logoImg} alt="logo" />
       <Title>Explore repositórios no Github</Title>
 
-      <Form onSubmit={handleAddRepository}>
+      <Form onSubmit={handleAddRepository} hasError={!!inputError}>
         <input
           placeholder="Digite o nome do repositório"
-          onChange={(e) => setNewRepo(e.target.value)}
+          onChange={e => setNewRepo(e.target.value)}
+          value={newRepo}
         />
         <button type="submit">Pesquisar</button>
       </Form>
 
+      {inputError && <Error>{inputError}</Error>}
+
       <Repositories>
-        {repositories.map((repository) => (
+        {repositories.map(repository => (
           <a href="#" key={repository.full_name}>
             <img
               src={repository.owner.avatar_url}
