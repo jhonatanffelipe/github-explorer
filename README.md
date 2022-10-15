@@ -1,5 +1,5 @@
 <p align="center"  >
-  <img height=80px src="https://raw.githubusercontent.com/jhonatanffelipe/github-explorer/edf2a16c7f213993e6dd913e56f871a19869b24d/src/assets/logo.svg"/>
+  <img height=80px src="https://raw.githubusercontent.com/jhonatanffelipe/github-explorer/d9fa4d0309c4e75e12daa49b41e567bad9f10059/src/assets/logo.svg"/>
 </p>
 
 <p align="center">
@@ -20,7 +20,7 @@
 
 Se trata de uma aplicação web desenvolvida ao longo do Bootcamp GoStack. A aplicação nos permite consultar os repositórios cadastrados no Github e visualizar suas Issues.
 
-<img height=350px src="https://raw.githubusercontent.com/jhonatanffelipe/github-explorer/master/assetsReadme/home.png"/>
+<img height=350px src="https://github.com/jhonatanffelipe/github-explorer/blob/master/src/assets/GithubExplorer.png?raw=true"/>
 
 ### :gear: Tecnologias utilizadas
 
