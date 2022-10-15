@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+<p align="center"  >
+  <img height=80px src="https://raw.githubusercontent.com/jhonatanffelipe/github-explorer/edf2a16c7f213993e6dd913e56f871a19869b24d/src/assets/logo.svg"/>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+   <img alt="Tecnologias" src="https://img.shields.io/github/languages/count/jhonatanffelipe/github-explorer?color=a8a8b3">
+   <img alt="Tamanho do repositório" src="https://img.shields.io/github/repo-size/jhonatanffelipe/github-explorer?color=a8a8b3">
+   <img alt="Ultimo commit no Github" src="https://img.shields.io/github/last-commit/jhonatanffelipe/github-explorer?color=a8a8b3">
+   <img alt="Criado por" src="https://img.shields.io/badge/made%20by-jhonatanffelipe-%20?color=a8a8b3">
+   <img alt="Linguagens mais usadas no programa" src="https://img.shields.io/github/languages/top/jhonatanffelipe/github-explorer?color=a8a8b3">
+</p>
 
-## Available Scripts
+<p align="center">
+  <a href="#rocket-sobre-o-projeto">Sobre o Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#gear-tecnologias-utilizadas">Tecnologias utilizadas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#computer-executar-a-aplicação">Executar a aplicação</a>&nbsp;&nbsp;&nbsp;
+</p>
 
-In the project directory, you can run:
+### :rocket: Sobre o projeto
 
-### `yarn start`
+Se trata de uma aplicação web desenvolvida ao longo do Bootcamp GoStack. A aplicação nos permite consultar os repositórios cadastrados no Github e visualizar suas Issues.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<img height=350px src="https://raw.githubusercontent.com/jhonatanffelipe/github-explorer/master/assetsReadme/home.png"/>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### :gear: Tecnologias utilizadas
 
-### `yarn test`
+- [VS Code](https://code.visualstudio.com/)
+- [Typescript](https://www.typescriptlang.org/)
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [EditorConfig](https://editorconfig.org/)
+- [ReactJS](https://reactjs.org/)
+- [React Router Dom](https://reactrouter.com/web/guides/quick-start)
+- [Styled Components](https://styled-components.com/)
+- [Axios](https://github.com/axios/axios)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### :computer: Executar a aplicação
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- O primeiro passo é clonar o repositório em sua base;
+- Em seguida dentro do diretório da aplicação executar no terminal o comando `yarn`, para baixar as dependências da aplicação;
+- Na sequência podemos executar nossa aplicação web com o comando `yarn start`;
